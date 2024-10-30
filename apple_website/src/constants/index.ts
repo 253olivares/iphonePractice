@@ -12,10 +12,17 @@ import {
 // Arrays of data that we are going to need and use
 
 // our nav lists so we just have to use the map function
-export const navLists = ["Store", "Mac", "iPhone", "Support"];
+export const navLists:string[] = ["Store", "Mac", "iPhone", "Support"];
+
+export interface highlight{
+  id:number,
+  textLists:string[],
+  video:string,
+  videoDuration:number
+}
 
 // our slides with all our data for each slide
-export const hightlightsSlides = [
+export const hightlightsSlides:highlight[] = [
     {
       id: 1,
       textLists: [
@@ -50,8 +57,15 @@ export const hightlightsSlides = [
     },
   ];
 
+export interface models {
+    id:number,
+    title:string,
+    color:string[],
+    img:string
+  }
+
 //   array of our iphone models
-  export const models = [
+  export const models: models[] = [
     {
       id: 1,
       title: "iPhone 15 Pro in Natural Titanium",
@@ -78,13 +92,18 @@ export const hightlightsSlides = [
     },
   ];
 // sizes
-  export const sizes = [
+export interface sizes {
+  label:string,
+  value:string
+}
+  export const sizes:sizes[]= [
     { label: '6.1"', value: "small" },
     { label: '6.7"', value: "large" },
   ];
 
+
 //   Footer links
-  export const footerLinks = [
+  export const footerLinks:string[] = [
     "Privacy Policy",
     "Terms of Use",
     "Sales Policy",

@@ -29,6 +29,7 @@ const HighlightsHeader = ():ReactNode => {
     gsap.to("#title", {
       opacity:1,
       y:0,
+      duration:1,
       scrollTrigger: {
         trigger: "#title"
       }

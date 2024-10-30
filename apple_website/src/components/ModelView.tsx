@@ -1,10 +1,11 @@
 import { Dispatch, MutableRefObject, ReactNode, RefObject, SetStateAction, Suspense } from "react"
 import * as THREE from 'three';
 import { modelState } from "./Model";
-import { Html, OrbitControls, PerspectiveCamera, View } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera, View } from "@react-three/drei";
 import IPhone from './IPhone';
 import Lights from "./Lights";
 import { OrbitControls as OrbitType } from 'three-stdlib'
+import Loader from "./Loader";
 
 const ModelView = ({
     index,
@@ -27,9 +28,9 @@ const ModelView = ({
     <View
         index={index}
         id={gsapType}
-        className={`border-2 border-red-500 w-full h-full
+        className={`w-full h-full absolute
             ${index === 2 ? 'right-[-100%]':'' } 
-            `}
+        `}
         
     >
         {/* Creates a light for our object */}
@@ -56,7 +57,7 @@ const ModelView = ({
             {/* Fallback option for our view port that will 
             place whatever is in our fallback while our assets 
             and lights load */}
-            <Suspense fallback={<Html><div>Loading...</div></Html>}> 
+            <Suspense fallback={<Loader />}> 
                 <IPhone 
                     scale= {index===1 ? [15,15,15] : [17,17,17]}
                     item={item}

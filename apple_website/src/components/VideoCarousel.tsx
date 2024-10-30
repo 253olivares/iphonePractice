@@ -176,7 +176,7 @@ const VideoCarousel = ():ReactNode => {
         <div className="flex items-center">
             {hightlightsSlides.map((list,index)=>{
                 return (
-                    <div id="slider" className="sm:pr-20 pr-10">
+                    <div key={index} id="slider" className="sm:pr-20 pr-10">
                         <div className="video-carousel_container">
 
                             {/* video */}
